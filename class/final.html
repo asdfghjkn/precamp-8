@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="final.css" rel="stylesheet" />
+    <title>d박스모델</title>
+    <style>
+        
+        .item {
+                background-color: white;
+                width:200px;
+                height:  50px;
+                margin: 30px;
+                border: 3px solid black;
+                box-sizing: border-box;
+                padding: 30px; 
+                
+
+
+            } 
+            .wrapper {
+                width: 500px;
+                height: 1000px;
+                background-color: rgb(188, 218, 214);
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+
+            }
+            .qqq {
+                background-color: white;
+                width: 200px;
+                height: 50px;
+                 
+
+
+
+            }
+             
+    </style>
+
+    <script>
+        let isStarted=false
+        function getToken(){
+            if(isStarted === false()){
+            const token = String(Math.floor(Math.random() * 1000000)).padStart(6, "0")
+            document.getElementById("aaa").innerText = token
+
+            let time = 180
+            setInterval(function(){
+                if(time >= 0){
+                    const minutes = Math.floor(time / 60)
+                    const seconds = time % 60
+                    document.getElementById("qqq").innerText =  minutes + ":" + seconds
+                    time = time - 1
+                }
+            }, 1000)
+
+          }else  {
+               alert ("이미 실행되었습니다")
+          }
+
+        }
+    </script>
+</head>
+<body>
+
+  
+    <div class="wrapper">
+              
+    
+     <h1 style="color: red"> 코드캠프회원가입</h1>
+     <input type="text" placeholder="이메일을 입력해주세요"  /><br /><br />
+     <input type="text" placeholder="이름을 입력해주세요"  /><br /><br />
+     <input class="password" placeholder="비밀번호을 입력해주세요"  /><br /><br />
+     <input id="qqq" placeholder="비밀번호를 다시 입력해주세요"  />
+     <select>
+        <option selected="true"disabled="true">지역을 선택하세요.</option>  </option>
+        <option>서울</option><br /><br />
+        <option>인천</option><br /><br />
+    </select><br /><br  /> 
+    <input type="radio" name="aaa"  />여성 <input type="radio" name="aaa"  /> 남성  /> <br  /><br  />
+    
+    <hr  />
+    <button>가입하기 </button>
+    <span id="aaa">000000</span><button onclick="getToken()">인증번호전송</button><br />
+    <span id="qqq">3:00</span><button>인증완료</button>
+    
+    </div>
+     
+    
+</body>
+</html>
